@@ -1,3 +1,6 @@
+CREATE DATABASE educacion DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE educacion;
+
 -- MySQL dump 10.13  Distrib 5.6.24, for linux-glibc2.5 (x86_64)
 --
 -- Host: localhost    Database: educacion

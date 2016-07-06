@@ -1,4 +1,4 @@
-<?php
+mysq<?php
 
 	class Alumno
 	{
