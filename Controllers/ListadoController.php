@@ -1,7 +1,7 @@
 <?php
 
 	function devolverLista(){
-		include "../Models/AlumnoClass.php";
+		include_once "../Models/AlumnoClass.php";
 		$alumno = new Alumno();
 
 		$data = $alumno->ListaCompleta();

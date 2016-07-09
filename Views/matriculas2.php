@@ -1,19 +1,29 @@
 <?php
+	session_start();
 	include_once "header.php";
 	include_once "../Controllers/ListadoController.php";
 	$data = devolverLista();
-?>
 
-<div class="container">
-	<div class="row">
-		<form action="" method="get" accept-charset="utf-8">
-			<label>Buscar<input type="text" name="nombre"></label>
-			<button type="submit">Buscar</button>
-		</form>
-	</div>
+	$_SESSION['cargocurso'] = $_REQUEST['idcargocurso'];
+	$idcargocurso = $_SESSION['cargocurso'];
+
+
+ ?>
+
+ <div class="container">
 	<div class="row">
 		<div class="col-md-12">
+			<h2>Curso: <?php  echo $idcargocurso;?></h2>
+ 			<form class="form-group" action="../Controllers/">
+				<input type="text" name="nombre" placeholder="Nombre">
+				<input type="text" name="apellidos" placeholder="Apellidos">
+				<button type="submit" class="btn btn-primary">Buscar</button>
+				<input type="text" name="idcargocurso" value="<?php  echo $idcargocurso;?>">
+			</form>
+
+			<form class="form-group" action="../Controllers/CursosController.php">
 			<table class="table table-bordered table-striped">
+				<em class="alert"> <?php echo @$msg = $_REQUEST['msg']; ?> </em>
 			    <thead>
 			        <tr>
 			            <th>#</th>
@@ -27,12 +37,17 @@
 			            <th></th>
 			        </tr>
 			    </thead>
+			    <input type="text" name="idcargocurso" value="<?php  echo $idcargocurso;?>">
 			    <tbody>
 			    	<?php
 						while ($row = $data->fetch_assoc()) {
+
 					 ?>
 			        <tr>
-			            <td><?php echo $row['idalumnos'];?></td>
+
+			            <td>
+			            <input type="text" name="idalumno" value="<?php echo $row['idalumnos'];?>">
+			            <?php echo $row['idalumnos'];?></td>
 			            <td><?php echo $row['nombres'];?></td>
 			            <td><?php echo $row['paterno'];?></td>
 			            <td><?php echo $row['materno'];?></td>
@@ -40,14 +55,14 @@
 			            <td><?php echo $row['genero'];?></td>
 			            <td><?php echo $row['celular'];?></td>
 			            <td><?php echo $row['direccion'];?></td>
-			            <td><a href="#" class="btn btn-primary">Editar</a></td>
-			            <td><a href="#" class="btn btn-danger">Borrar</a></td>
+			            <td><a href="../Controllers/CursosController.php?idalumno=<?php echo $row['idalumnos'];?>" class="btn btn-primary">Matricular</a></td>
 			        </tr>
 			        <?php
 			        	}
 			        ?>
 			    </tbody>
 			</table>
+			</form>
 		</div>
 	</div>
 </div>
