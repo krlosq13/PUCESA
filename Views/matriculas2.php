@@ -18,7 +18,7 @@
 				<input type="text" name="nombre" placeholder="Nombre">
 				<input type="text" name="apellidos" placeholder="Apellidos">
 				<button type="submit" class="btn btn-primary">Buscar</button>
-				<input type="text" name="idcargocurso" value="<?php  echo $idcargocurso;?>">
+				<input type="hidden" name="idcargocurso" value="<?php  echo $idcargocurso;?>">
 			</form>
 
 			<form class="form-group" action="../Controllers/CursosController.php">
@@ -37,7 +37,7 @@
 			            <th></th>
 			        </tr>
 			    </thead>
-			    <input type="text" name="idcargocurso" value="<?php  echo $idcargocurso;?>">
+			    <input type="hidden" name="idcargocurso" value="<?php  echo $idcargocurso;?>">
 			    <tbody>
 			    	<?php
 						while ($row = $data->fetch_assoc()) {
@@ -46,7 +46,7 @@
 			        <tr>
 
 			            <td>
-			            <input type="text" name="idalumno" value="<?php echo $row['idalumnos'];?>">
+			            <input type="hidden" name="idalumno" value="<?php echo $row['idalumnos'];?>">
 			            <?php echo $row['idalumnos'];?></td>
 			            <td><?php echo $row['nombres'];?></td>
 			            <td><?php echo $row['paterno'];?></td>

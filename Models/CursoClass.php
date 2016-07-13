@@ -23,13 +23,13 @@
 		}
 
 		public function CursosActivos(){
-			$sql = "SELECT idcargocurso, idCurso, idDocente, idfrecuencia, idHorario,fechaInicio,fechaFinal FROM cargocurso";
+			$sql = "SELECT idcargocurso,idCurso,idDocente,idfrecuencia,idHorario,fechaInicio,fechaFinal FROM cargocurso";
 			$datos = $this->mysqli->query($sql) or die("Error: ".mysql_error());
 			return $datos;
 		}
 
 		public function mostrarCurso($idcurso){
-			$sql = "SELECT cursos, idmodulo FROM cursos WHERE idcursos = $idcurso";
+			$sql = "SELECT cursos, idmodulo FROM curso where idcurso = $idcurso";
 			$datos = $this->mysqli->query($sql) or die("Error: ".mysql_error());
 			$fila = $datos->fetch_assoc();
 			return $fila;
@@ -55,20 +55,28 @@
 			$fila = $datos->fetch_assoc();
 			return $fila;
 		}
-
-		public function agregarCurso($idcargocurso,$idalumnos,$idpersonal=1){
-			$fecha = date('Y-m-d');
-			$sql = "INSERT INTO matriculas (fecMatricula, idcargocurso, idalumnos, idpersonal) VALUES ('$fecha',$idcargocurso,$idalumnos,$idpersonal)";
-			$this->mysqli->query($sql);
-		}
-
-		public function checkMatricula($id, $idalu){
-			$sql = "SELECT idmatriculas FROM matriculas WHERE idcargocurso = '$id' AND idalumnos = '$idalu'";
-			$datos = $this->mysqli->query($sql) or die("Error: ".mysql_error());
-			$numero = $datos->fetch_array();
-			echo $numero[0];
-			return $numero[0];
-		}
 	}
+
+	$curso = new Curso();
+	$data = $curso->CursosActivos();
+
+	while ($row = $data->fetch_assoc()) {
+		echo $row['idcargocurso']."<br>";
+
+		$cur = $curso->mostrarCurso($row['idCurso']);
+		echo $cur['cursos'];
+
+		$doc = $curso->mostrarDocente($row['idDocente']);
+		echo $doc['docente'];
+
+		$frec = $curso->mostrarFrecuencia($row['idfrecuencia']);
+		echo $frec['frecuencia'];
+
+		$hor = $curso->mostrarHorario($row['idHorario']);
+		echo $hor['horas'];
+		echo $row['fechaInicio']."<br>";
+		echo $row['fechaFinal']."<br>";
+	}
+
 
 ?>

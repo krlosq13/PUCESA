@@ -1,7 +1,6 @@
-<?php
-	include_once "header.php";
-	include_once "../Controllers/ListadoController.php";
-	$data = devolverLista();
+<?php include_once "header.php";
+	  include_once "../Controllers/ListadoController.php";
+	  $data = devolverLista();
 ?>
 
 <div class="container">

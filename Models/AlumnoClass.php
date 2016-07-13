@@ -29,14 +29,6 @@ mysq<?php
 			$data = $this->mysqli->query($sql);
 			return $data;
 		}
-
-		public function busquedaAlumnos($nom, $ape){
-			$sql = "SELECT idalumnos,dni,nombres,apellidos,fecNacimiento,genero,celular,email,direccion FROM alumnosBusqueda WHERE nombres LIKE '%$nom%' AND apellidos LIKE '%$ape%'";
-			$data = $this->mysqli->query($sql);
-			return $data;
-		}
-
 	}
-
 
  ?>
