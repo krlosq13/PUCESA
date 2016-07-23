@@ -8,4 +8,11 @@
 		return $data;
 	}
 
+	function listaAlumnos($codCurso){
+		include_once "../Models/CursoClass.php";
+		$curso = new Curso();
+		$data = $curso->AlumnosMatriculados($codCurso);
+		return $data;
+	}
+
  ?>

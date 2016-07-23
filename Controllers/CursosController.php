@@ -22,7 +22,7 @@
 			$rpta = $this->link->checkMatricula($this->idcargocurso, $this->idalumnos);
 
 			if($rpta[0] > 0){
-				header("Location: ../Views/matriculas2.php?idcargocurso=".$this->idcargocurso."&msg=Ya fue Matriculado");
+				header("Location: ../Views/buscar1.php?idcargocurso=".$this->idcargocurso."&msg=Ya fue Matriculado");
 			}else{
 				$this::insertarMatricula();
 			}
@@ -36,7 +36,7 @@
 			echo $idalumnos = $_REQUEST['idalumno'];
 
 			$this->link->agregarCurso($idcargocurso,$idalumnos,1);
-			header("Location: ../Views/matriculas2.php?idcargocurso=".$this->idcargocurso."&msg=Guardado");
+			header("Location: ../Views/buscar1.php?idcargocurso=".$this->idcargocurso."&msg=Guardado");
 		}
 	}
 

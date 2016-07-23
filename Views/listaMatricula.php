@@ -5,7 +5,6 @@
 	$curso = new Curso();
 	$data = $curso->CursosActivos();
 
-
 ?>
 
 <div class="container">
@@ -39,7 +38,7 @@
 					<td><?php echo $hor['horas'];?></td>
 					<td><?php echo $row[5];?></td>
 					<td><?php echo $row[6];?></td>
-					<td><a class="btn btn-primary" href="matriculas2.php?idcargocurso=<?php echo $row[0];
+					<td><a class="btn btn-primary" href="buscar1.php?idcargocurso=<?php echo $row[0];
 					$_SESSION['cargocurso'] = $row[0];
 					?>">Add Alumnos</a></td>
 				</tr>

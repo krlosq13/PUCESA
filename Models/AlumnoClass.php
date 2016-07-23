@@ -1,4 +1,4 @@
-mysq<?php
+<?php
 
 	class Alumno
 	{
@@ -36,7 +36,13 @@ mysq<?php
 			return $data;
 		}
 
-	}
+		public function DevolverNombre($idAlumno){
+			$sql = "SELECT CONCAT(nombres,' ', apellidos) AS alumno FROM alumnosBusqueda WHERE idalumnos = $idAlumno";
+			$data = $this->mysqli->query($sql);
+			$fila = $data->fetch_assoc();
+			return $fila;
+		}
 
+	}
 
  ?>

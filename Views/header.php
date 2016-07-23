@@ -5,7 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title></title>
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/highlight.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap3/bootstrap-switch.css">
+  <link rel="stylesheet" type="text/css" href="css/docs.min.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+
 </head>
 <body>
 
@@ -53,7 +58,8 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
-
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-switch.min.js"></script>
+    <script type="text/javascript" src="js/highlight.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>

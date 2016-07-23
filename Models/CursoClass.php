@@ -69,6 +69,12 @@
 			echo $numero[0];
 			return $numero[0];
 		}
+
+		public function AlumnosMatriculados($codCurso){
+			$sql = "SELECT idalumnos FROM matriculas  WHERE idcargocurso = $codCurso";
+			$datos = $this->mysqli->query($sql) or die("Error: ".mysql_error());
+			return $datos;
+		}
 	}
 
 ?>
