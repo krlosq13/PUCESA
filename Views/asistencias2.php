@@ -26,8 +26,6 @@ $curso = $_REQUEST['idcargocurso'];
 
 $data = listaAlumnos($curso);
 $numero = $data->num_rows;
-
-
 ?>
 
 <div class="container">
