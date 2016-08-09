@@ -38,6 +38,7 @@
 			$this->link->agregarCurso($idcargocurso,$idalumnos,1);
 			header("Location: ../Views/buscar1.php?idcargocurso=".$this->idcargocurso."&msg=Guardado");
 		}
+
 	}
 
 	$vCurso = new CursosController();

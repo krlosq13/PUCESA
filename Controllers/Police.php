@@ -22,17 +22,18 @@
 			include "../Models/AlumnoClass.php";
 			$this->alumno = new Alumno();
 
-			$this->nombres  =trim($_POST['nombres']);
-			$this->paterno  =trim($_POST['paterno']);
-			$this->materno  =trim($_POST['materno']);
-			$this->celular  =trim($_POST['celular']);
-			$this->dni   	=trim($_POST['dni']);
-			$this->email   	=trim($_POST['email']);
-			$this->dia 		=trim($_POST['dia']);
-			$this->mes 		=trim($_POST['mes']);
-			$this->year 	=trim($_POST['year']);
-			$this->direccion=trim($_POST['direccion']);
-			$this->genero  	=trim($_POST['genero']);
+			$this->nombres  =trim(ucwords($_POST['nombres']));
+			$this->paterno  =trim(ucwords($_POST['paterno']));
+			$this->materno  =trim(ucwords($_POST['materno']));
+			$this->celular  =trim(ucwords($_POST['celular']));
+			$this->dni   	=trim(ucwords($_POST['dni']));
+			$this->email   	=trim(ucwords($_POST['email']));
+			$this->dia 		=trim(ucwords($_POST['dia']));
+			$this->mes 		=trim(ucwords($_POST['mes']));
+			$this->year 	=trim(ucwords($_POST['year']));
+			$this->direccion=trim(ucwords($_POST['direccion']));
+			$this->genero  	=trim(ucwords($_POST['genero']));
+
 			$this->fecNacimiento = $this->year."-".$this->mes."-".$this->dia;
 
 			$this::CheckDuplicado();

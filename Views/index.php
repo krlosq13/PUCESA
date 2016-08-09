@@ -17,8 +17,8 @@ include_once "header.php";
                 <a href="addCurso.php" class="btn btn-primary">Agregar Nuevo Curso</a>
                 <a href="listaMatricula.php" class="btn btn-primary">Matricular Alumnos</a>
                 <a href="asistencias.php" class="btn btn-primary">Asistencias</a>
-                <a href="#" class="btn btn-primary">Listado de Alumnos por Curso</a>
-                <a href="#" class="btn btn-primary">Ingresar Notas</a>
+                <a href="listadoAlumnos.php" class="btn btn-primary">Listado de Alumnos por Curso</a>
+                <a href="notasAlumnos.php" class="btn btn-primary">Ingresar Notas</a>
                 <a href="#" class="btn btn-primary">Impresion de Notas</a>
             </div>
             <div class="col-md-4">

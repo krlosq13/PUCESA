@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript">
+		function Activos(){
+			var i;
+			var lista = new Array(10);
+			var total = document.forms[0]
+			alert(total.length);
+
+			for(i=1;i<total.length;i++){
+				var chk = document.getElementById(""+i+"").checked;
+				alert(chk);
+					lista[i]=chk;
+				}
+
+			for(i=1;i<total.length;i++){
+					document.write(lista[i]);
+				}
+
+		}
+
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Listado nuevo</h1>
+	</header><!-- /header -->
+
+	<section>
+		<form action="">
+			<input type="checkbox" id="1">1</input>
+			<input type="checkbox" id="2">2</input>
+			<input type="checkbox" id="3">3</input>
+			<input type="checkbox" id="4">4</input>
+			<input type="checkbox" id="5">5</input>
+			<input type="checkbox" id="6">5</input>
+			<input type="checkbox" id="7">5</input>
+			<input type="checkbox" id="8">5</input>
+			<input type="checkbox" id="9">5</input>
+			<input type="checkbox" id="10">5</input>
+			<input type="checkbox" id="11">5</input>
+			<input type="checkbox" id="12">5</input>
+			<input type="checkbox" id="13">5</input>
+			<input type="checkbox" id="14">5</input>
+
+			<button type="button" onclick="Activos()">Activar</button>
+		</form>
+	</section>
+</body>
+</html>

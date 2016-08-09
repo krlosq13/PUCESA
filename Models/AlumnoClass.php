@@ -25,7 +25,7 @@
 		}
 
 		public function ListaCompleta(){
-			$sql = "SELECT idalumnos,dni,nombres,paterno,materno,fecNacimiento,genero,celular,email,direccion FROM alumnos";
+			$sql = "SELECT idalumnos,dni,nombres,paterno,materno,fecNacimiento,genero,celular,email,direccion FROM alumnos ORDER BY paterno";
 			$data = $this->mysqli->query($sql);
 			return $data;
 		}
